@@ -1,7 +1,7 @@
-#DevIoT Gateway Python SDK
+# DevIoT Gateway Python SDK
 This is [DevIoT](https://developer.cisco.com/site/devnetlabs/deviot/) gateway service SDK and sample codes. You can use this SDK to register sensors to DevIoT, and sync up data and actions between the sensors and DevIoT. 
 
-###You can try it from [http://www.ciscodeviot.com/](http://www.ciscodeviot.com/) quickly 
+### You can try it from [https://deviot.cisco.com/](https://deviot.cisco.com/) quickly 
 ## Table of contents
 
 * [What in this code](#what-in-this-code)
@@ -17,21 +17,21 @@ This is [DevIoT](https://developer.cisco.com/site/devnetlabs/deviot/) gateway se
 
 3. Sample_Code_for_Simulated_Sensor.py: A simple sample to show how to use this SDK, which sync up some virtual sensor data to DevIot, it also let DevIot can trigger some virtual action sensor
 
-##Prerequisite
-1.[Python2.7](https://www.python.org/downloads/):This SDK base on the Python 2.7.10
+## Prerequisite
+1. [Python 2.7](https://www.python.org/downloads/):This SDK base on the Python 2.7.10
 
-2.[paho-mqtt](https://eclipse.org/paho/clients/python/): this SDK use this to build a simple MQTT client
+2. [paho-mqtt](https://eclipse.org/paho/clients/python/): this SDK use this to build a simple MQTT client
 
-##Usage:
+## Usage:
 1. You can use sample code to register GrovePi sensors and simulated sensors to DevIoT.
 
 2. You can also use SDK to register other sensors and systems to DevIoT.
 
 
-##SDK API
-###Gateway
+## SDK API
+### Gateway
 This class allow your instance a Gateway app, hepe you register sensors to DevIot, sync up data and action to DevIot.
-####Constructor
+#### Constructor
 * app name: the gateway name, DevIot use it differentiates gateways 
 * deviot address: the address of DevIot, should include the port
 * mq server: gateway use mqtt protocol to communicate with DevIot, you can ask the your DevIot administrator to get it, it also should include the port
@@ -40,7 +40,7 @@ This class allow your instance a Gateway app, hepe you register sensors to DevIo
         # the parameters are: app name, deviot address, mq server address, deviot account
         app = Gateway("grovepi_test", "10.140.92.25:9000", "10.140.92.25:1883", "tingxxu@cisco.com")
 
-####Register Data Sensors
+#### Register Data Sensors
 * sensor kind: the kind of sensor, it describes your sensor's function
 * sensor id: the unique id of sensor
 * sensor name: the display name in DevIot of the sensor
@@ -48,7 +48,7 @@ This class allow your instance a Gateway app, hepe you register sensors to DevIo
         # the parameters are: sensor kind, sensor id, sensor display name, action call back function
         app.register_action("led", "groveled", "GroveLed", trigger_grove_led)
         
-####Register Action Sensors
+#### Register Action Sensors
 * sensor kind: the kind of sensor, it describes your sensor's function
 * sensor id: the unique id of sensor
 * sensor name: the display name in DevIot of the sensor
@@ -66,21 +66,21 @@ This class allow your instance a Gateway app, hepe you register sensors to DevIo
         # the parameters are: sensor kind, sensor id, sensor display name, action call back function
         app.register_action("led", "groveled", "GroveLed", trigger_grove_led)
                    
-####Start the Gateway
+#### Start the Gateway
 
         # run service
         app.run()
         
 The run method will let gateway start a background thread to register sensors and sync up data and action
      
-####Update the Sensor Data
+#### Update the Sensor Data
 * sensor id: the unique id of sensor
 * sensor value: the new value of data sensor
 
         app.set_value("grovelight", 50.0f)
         
-##How to run Sample_Code_for_GrovePi_Sensor.py
-###Build the hardware###
+## How to run Sample_Code_for_GrovePi_Sensor.py
+### Build the hardware ###
 
 1.Prepare your RaspberryPi os environment in your SD card
 
@@ -102,7 +102,7 @@ You also can do this follow [here](https://www.raspberrypi.org/documentation/ins
 
 4.Connect RaspberryPi with Display use the HDMI cables.
 
-###Build the software environment###
+### Build the software environment ###
 5.Install the Python 2.7. Check the python version of RaspberryPi os. this sample code base on python2.7.3 or later. in most time, the RaspberryPi os have installed the python2.7.3 or later, if not, you can 
 install the python follow [here](https://www.raspberrypi.org/documentation/linux/software/python.md)
 
@@ -122,7 +122,7 @@ install the python follow [here](https://www.raspberrypi.org/documentation/linux
 Your SD card now has what it needs to start using the GrovePi!
 [Here is info more about install GrovePi SDK](http://www.dexterindustries.com/GrovePi/get-started-with-the-grovepi/)
 
-###Run Grove Pi sample
+### Run Grove Pi sample
 * Cd to your work space in terminal window
 * Type follow command:
     
