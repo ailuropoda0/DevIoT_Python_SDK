@@ -47,7 +47,7 @@ class Register(threading.Thread):
 
         while True:
             try:
-                conn = httplib.HTTPConnection(self.__api_address__)
+                conn = httplib.HTTPSConnection(self.__api_address__)
                 conn.request("POST", api, json_data, {'Content-Type': 'application/json'})
                 response = conn.getresponse()
             except IOError as e:

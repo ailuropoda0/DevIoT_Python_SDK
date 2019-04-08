@@ -15,7 +15,6 @@ class SensorManager(Singleton):
     def add_read_sensor(self, sensor_kind, sensor_id, sensor_name):
         if sensor_id in self.__sensors__:
             raise ValueError("{0} have been added".format(sensor_id))
-            return
         new_sensor = Sensor(sensor_kind, sensor_id, sensor_name)
         value_property = SProperty("value", 0, None, 0)
         new_sensor.add_property(value_property)
@@ -24,7 +23,6 @@ class SensorManager(Singleton):
     def add_action_sensor(self, sensor_kind, sensor_id, sensor_name, action_function=None):
         if sensor_id in self.__sensors__:
             raise ValueError("{0} have been added".format(sensor_id))
-            return
         new_sensor = Sensor(sensor_kind, sensor_id, sensor_name)
         action_on = SAction("on")
         action_off = SAction("off")
@@ -41,7 +39,6 @@ class SensorManager(Singleton):
     def add_custom_sensor_with_action(self, sensor, action):
         if sensor.id in self.__sensors__:
             raise ValueError("{0} have been added".format(sensor.id))
-            return
         if isinstance(sensor, Sensor):
             self.__sensors__[sensor.id] = sensor
             if action is not None:

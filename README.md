@@ -1,4 +1,6 @@
 # DevIoT Gateway Python SDK
+## THIS REPOSITORY IS DEPRECATED. THE NEW VERSION IS [gateway-python-sdk](https://github.com/ailuropoda0/gateway-python-sdk).
+
 This is [DevIoT](https://developer.cisco.com/site/devnetlabs/deviot/) gateway service SDK and sample codes. You can use this SDK to register sensors to DevIoT, and sync up data and actions between the sensors and DevIoT. 
 
 ### You can try it from [https://deviot.cisco.com/](https://deviot.cisco.com/) quickly 
